@@ -79,21 +79,20 @@ flutter:
 
     - family: Raleway
       fonts:
-        - asset : easy_recipe\lib\assets\fonts\fonts\Raleway-Black.ttf
+        - asset : lib\assets\fonts\fonts\Raleway-Black.ttf
           weight: 900
-        - asset : easy_recipe\lib\assets\fonts\fonts\Raleway-Bold.ttf
+        - asset : lib\assets\fonts\fonts\Raleway-Bold.ttf
           weight: 700
-        - asset : easy_recipe\lib\assets\fonts\fonts\Raleway-Regular.ttf
-
+        - asset : lib\assets\fonts\fonts\Raleway-Regular.ttf
     - family: RobotoCondensed
       fonts:
-        - asset: easy_recipe\lib\assets\fonts\fonts\RobotoCondensed-Bold.ttf
+        - asset: lib\assets\fonts\fonts\RobotoCondensed-Bold.ttf
           weight: 700
-        - asset: easy_recipe\lib\assets\fonts\fonts\RobotoCondensed-Italic.ttf
+        - asset: lib\assets\fonts\fonts\RobotoCondensed-Italic.ttf
           style: italic
-        - asset: easy_recipe\lib\assets\fonts\fonts\RobotoCondensed-Light.ttf
+        - asset: lib\assets\fonts\fonts\RobotoCondensed-Light.ttf
           weight: 300
-        - asset: easy_recipe\lib\assets\fonts\fonts\RobotoCondensed-Regular.ttf
+        - asset: lib\assets\fonts\fonts\RobotoCondensed-Regular.ttf
 
   #  - family: Trajan Pro
   #     fonts:

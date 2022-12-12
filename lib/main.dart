@@ -12,13 +12,16 @@ class MyApp extends StatelessWidget {
       title: 'Vamos Cozinhar?',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: Colors.lightGreen,
-          secondary: Colors.indigo,
+          primary: Color.fromARGB(255, 207, 14, 0),
+          secondary: Color.fromARGB(255, 230, 158, 64),
         ),
+        canvasColor: Color.fromARGB(255, 255, 243, 222),
         fontFamily: "Raleway",
         textTheme: ThemeData.light().textTheme.copyWith(
-              headline5: TextStyle(fontFamily: "Raleway"),
-              headline6: TextStyle(fontFamily: "RobotoCondensed"),
+              headline6: const TextStyle(
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+              ),
             ),
       ),
       home: CategoriesScreen(),
