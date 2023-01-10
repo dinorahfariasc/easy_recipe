@@ -26,6 +26,7 @@ class CategoryItem extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(
             image: AssetImage(category.image),
+            // fit: BoxFit.fill,
           ),
           borderRadius: BorderRadius.circular(15),
           gradient: LinearGradient(

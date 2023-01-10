@@ -1,5 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'dart:ui';
+
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
@@ -15,19 +17,33 @@ class CategoriesScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Vamos Cozinhar?"),
       ),
-      body: GridView(
-        padding: const EdgeInsets.all(25),
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-          // scroll area, extendendo ao maximo
-          maxCrossAxisExtent: 200, // cada elemento com no maximo 200
-          childAspectRatio:
-              3 / 2, // proporcao de cada elemento dentro do gridView
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-        ),
-        children: DUMMY_CATEGORIES.map((cat) {
-          return CategoryItem(cat);
-        }).toList(),
+      body: Column(
+        children: [
+          TextField(
+            style: TextStyle(
+              color: Colors.white,
+            ),
+            decoration: InputDecoration(
+              filled: true,
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  borderSide: BorderSide.none),
+              hintText: "pesquisar",
+              prefixIcon: Icon(Icons.search),
+            ),
+          ),
+          SizedBox(
+            height: 30,
+          ),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              children: dummyCategories.map((cat) {
+                return CategoryItem(cat);
+              }).toList(),
+            ),
+          ),
+        ],
       ),
     );
   }

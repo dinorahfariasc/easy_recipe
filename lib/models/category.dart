@@ -4,10 +4,11 @@ class Category {
   final String id;
   final String title;
   final Color color;
+  final String image;
 
-  const Category({
-    required this.id,
-    required this.title,
-    this.color = Colors.red,
-  });
+  const Category(
+      {required this.id,
+      required this.title,
+      this.color = Colors.red,
+      required this.image,});
 }
