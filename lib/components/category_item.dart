@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import '../models/category.dart';
 
@@ -22,6 +24,9 @@ class CategoryItem extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(category.image),
+          ),
           borderRadius: BorderRadius.circular(15),
           gradient: LinearGradient(
             colors: [
@@ -32,9 +37,13 @@ class CategoryItem extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
-        child: Text(
-          category.title,
-          style: Theme.of(context).textTheme.headline6,
+        child: Column(
+          children: [
+            Text(
+              category.title,
+              style: Theme.of(context).textTheme.headline6,
+            ),
+          ],
         ),
       ),
     );
