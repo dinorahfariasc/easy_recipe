@@ -23,7 +23,7 @@ class Meal {
   final bool isVegan;
   final bool isVegetarian;
   final Complexity complexity;
-  final Cost cost;
+  final String label;
 
   const Meal({
     required this.id,
@@ -38,6 +38,6 @@ class Meal {
     required this.isVegan,
     required this.isVegetarian,
     required this.complexity,
-    required this.cost,
+    required this.label,
   });
 }

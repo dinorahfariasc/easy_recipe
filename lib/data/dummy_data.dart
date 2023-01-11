@@ -62,7 +62,6 @@ const dummyMeals = [
     id: 'm1',
     categories: ['c1', 'c2'],
     title: 'Spaghetti with Tomato Sauce',
-    cost: Cost.cheap,
     complexity: Complexity.simple,
     imageUrl:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg/800px-Spaghetti_Bolognese_mit_Parmesan_oder_Grana_Padano.jpg',
@@ -73,8 +72,9 @@ const dummyMeals = [
       '1 Onion',
       '250g Spaghetti',
       'Spices',
-      'Cheese (optional)'
+      'Cheese (optional)',
     ],
+    label: 'brasileira',
     steps: [
       'Cut the tomatoes and the onion into small pieces.',
       'Boil some water - add salt to it once it boils.',
@@ -93,7 +93,6 @@ const dummyMeals = [
     id: 'm2',
     categories: ['c2'],
     title: 'Toast Hawaii',
-    cost: Cost.cheap,
     complexity: Complexity.simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/07/11/21/51/toast-3532016_1280.jpg',
@@ -105,6 +104,7 @@ const dummyMeals = [
       '1-2 Slices of Cheese',
       'Butter'
     ],
+    label: 'oriental',
     steps: [
       'Butter one side of the white bread',
       'Layer ham, the pineapple and cheese on the white bread',
@@ -119,7 +119,6 @@ const dummyMeals = [
     id: 'm3',
     categories: ['c2', 'c3'],
     title: 'Classic Hamburger',
-    cost: Cost.fair,
     complexity: Complexity.simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2014/10/23/18/05/burger-500054_1280.jpg',
@@ -132,6 +131,7 @@ const dummyMeals = [
       'Ketchup',
       '2 Burger Buns'
     ],
+    label: 'brasileira',
     steps: [
       'Form 2 patties',
       'Fry the patties for c. 4 minutes on each side',
@@ -148,7 +148,6 @@ const dummyMeals = [
     id: 'm4',
     categories: ['c4'],
     title: 'Wiener Schnitzel',
-    cost: Cost.expensive,
     complexity: Complexity.medium,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg',
@@ -163,6 +162,7 @@ const dummyMeals = [
       'Salt',
       'Lemon Slices'
     ],
+    label: 'oriental',
     steps: [
       'Tenderize the veal to about 2–4mm, and salt on both sides.',
       'On a flat plate, stir the eggs briefly with a fork.',
@@ -181,7 +181,6 @@ const dummyMeals = [
     id: 'm5',
     categories: ['c2', 'c5', 'c10'],
     title: 'Salad with Smoked Salmon',
-    cost: Cost.expensive,
     complexity: Complexity.simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2016/10/25/13/29/smoked-salmon-salad-1768890_1280.jpg',
@@ -197,6 +196,7 @@ const dummyMeals = [
       'Olive Oil',
       'Salt and Pepper'
     ],
+    label: 'oriental',
     steps: [
       'Wash and cut salad and herbs',
       'Dice the salmon',
@@ -213,7 +213,6 @@ const dummyMeals = [
     id: 'm6',
     categories: ['c6', 'c10'],
     title: 'Delicious Orange Mousse',
-    cost: Cost.cheap,
     complexity: Complexity.hard,
     imageUrl:
         'https://cdn.pixabay.com/photo/2017/05/01/05/18/pastry-2274750_1280.jpg',
@@ -226,6 +225,7 @@ const dummyMeals = [
       '200g Cream',
       'Orange Peel',
     ],
+    label: 'oriental',
     steps: [
       'Dissolve gelatine in pot',
       'Add orange juice and sugar',
@@ -246,7 +246,6 @@ const dummyMeals = [
     id: 'm7',
     categories: ['c7'],
     title: 'Pancakes',
-    cost: Cost.cheap,
     complexity: Complexity.simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/07/10/21/23/pancake-3529653_1280.jpg',
@@ -260,6 +259,7 @@ const dummyMeals = [
       '1 Egg',
       '3 Tablespoons Butter, melted',
     ],
+    label: 'oriental',
     steps: [
       'In a large bowl, sift together the flour, baking powder, salt and sugar.',
       'Make a well in the center and pour in the milk, egg and melted butter; mix until smooth.',
@@ -275,7 +275,6 @@ const dummyMeals = [
     id: 'm8',
     categories: ['c8'],
     title: 'Creamy Indian Chicken Curry',
-    cost: Cost.fair,
     complexity: Complexity.medium,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/06/18/16/05/indian-food-3482749_1280.jpg',
@@ -289,6 +288,7 @@ const dummyMeals = [
       '1 Teaspoon Cayenne Pepper',
       '500ml Coconut Milk',
     ],
+    label: 'oriental',
     steps: [
       'Slice and fry the chicken breast',
       'Process onion, garlic and ginger into paste and sauté everything',
@@ -306,7 +306,6 @@ const dummyMeals = [
     id: 'm9',
     categories: ['c9'],
     title: 'Chocolate Souffle',
-    cost: Cost.cheap,
     complexity: Complexity.hard,
     imageUrl:
         'https://cdn.pixabay.com/photo/2014/08/07/21/07/souffle-412785_1280.jpg',
@@ -325,6 +324,7 @@ const dummyMeals = [
       '1 Pinch Cream of Tartar',
       '1 Tablespoon white Sugar',
     ],
+    label: 'oriental',
     steps: [
       'Preheat oven to 190°C. Line a rimmed baking sheet with parchment paper.',
       'Brush bottom and sides of 2 ramekins lightly with 1 teaspoon melted butter; cover bottom and sides right up to the rim.',
@@ -353,7 +353,6 @@ const dummyMeals = [
     id: 'm10',
     categories: ['c2', 'c5', 'c10'],
     title: 'Asparagus Salad with Cherry Tomatoes',
-    cost: Cost.expensive,
     complexity: Complexity.simple,
     imageUrl:
         'https://cdn.pixabay.com/photo/2018/04/09/18/26/asparagus-3304997_1280.jpg',
@@ -365,6 +364,7 @@ const dummyMeals = [
       'Salad',
       'Salt, Pepper and Olive Oil'
     ],
+    label: 'oriental',
     steps: [
       'Wash, peel and cut the asparagus',
       'Cook in salted water',

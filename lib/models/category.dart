@@ -6,9 +6,10 @@ class Category {
   final Color color;
   final String image;
 
-  const Category(
-      {required this.id,
-      required this.title,
-      this.color = Colors.red,
-      required this.image,});
+  const Category({
+    required this.id,
+    required this.title,
+    this.color = Colors.red,
+    required this.image,
+  });
 }
