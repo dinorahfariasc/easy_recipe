@@ -1,15 +1,3 @@
-enum Complexity {
-  simple,
-  medium,
-  hard,
-}
-
-enum Cost {
-  cheap,
-  fair,
-  expensive,
-}
-
 class Meal {
   final String id;
   final List<String> categories;
@@ -22,7 +10,6 @@ class Meal {
   final bool isLactoseFree;
   final bool isVegan;
   final bool isVegetarian;
-  final Complexity complexity;
   final String label;
 
   const Meal({
@@ -37,7 +24,6 @@ class Meal {
     required this.isLactoseFree,
     required this.isVegan,
     required this.isVegetarian,
-    required this.complexity,
     required this.label,
   });
 }

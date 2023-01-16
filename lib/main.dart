@@ -1,3 +1,4 @@
+import 'package:easy_recipe/data/dummy_data.dart';
 import 'package:flutter/material.dart';
 import 'screens/categories_screens.dart';
 import 'screens/categories_meals_screen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
           primary: Colors.pink,
           secondary: Colors.amber,
         ),
-        canvasColor: const Color.fromRGBO(255, 254, 229, 1),
+        canvasColor: Color.fromARGB(255, 231, 231, 231),
         fontFamily: 'Raleway',
         textTheme: ThemeData.light().textTheme.copyWith(
               headline6: const TextStyle(
@@ -28,10 +29,40 @@ class MyApp extends StatelessWidget {
               ),
             ),
       ),
-      routes: {
-        AppRoutes.home: (ctx) => const CategoriesScreen(),
+      home: const HomeScreen(),
+      /* routes: {
+        AppRoutes.home: (context) => const homeScreen(),
+        AppRoutes.categories: (ctx) => const CategoriesScreen(),
         AppRoutes.categoriesMeals: (ctx) => const CategoriesMealsScreen(),
-      },
+      }, */
+    );
+  }
+}
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  int currentIndex = 0;
+  final screens = [const CategoriesScreen(), const CategoriesMealsScreen()];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Home"),
+      ),
+      body: CategoriesScreen(),
     );
   }
 }
