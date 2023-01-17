@@ -39,11 +39,31 @@ class MealItem extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
-              child: Image(
-                image: AssetImage('lib/assets/images/breakfeast.jpg'),
+              child: Column(
+                children: [
+                  Image(
+                    image: AssetImage('lib/assets/images/breakfeast.jpg'),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text(meal.title),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(meal.duration),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Text('4.5 ⭐'),
+                    ],
+                  )
+                ],
               ),
             ),
-            Text(meal.title),
           ],
         ),
       ),

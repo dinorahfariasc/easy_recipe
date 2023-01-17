@@ -5,7 +5,7 @@ class Meal {
   final String imageUrl;
   final List<String> ingredients;
   final List<String> steps;
-  final int duration;
+  final String duration;
   final bool isGlutenFree;
   final bool isLactoseFree;
   final bool isVegan;
