@@ -1,29 +1,25 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'dart:ui';
 import 'package:easy_recipe/components/meal_item.dart';
-import 'package:easy_recipe/models/meal.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:easy_recipe/data/dummy_data.dart';
 import 'package:flutter/material.dart';
-import '../components/category_item.dart';
-import '../data/dummy_data.dart';
 
 class CategoriesScreen extends StatelessWidget {
   const CategoriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    const double horizontalPaddingSize = 20;
+
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20),
-            child: TextField(
-              style: TextStyle(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: horizontalPaddingSize),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 20,
+            ),
+            TextField(
+              style: const TextStyle(
                 color: Colors.white,
               ),
               decoration: InputDecoration(
@@ -32,80 +28,65 @@ class CategoriesScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                     borderSide: BorderSide.none),
                 hintText: "Saerch your perfect recipe",
-                prefixIcon: Icon(Icons.search),
+                prefixIcon: const Icon(Icons.search),
               ),
             ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            padding: EdgeInsets.fromLTRB(12, 0, 0, 8),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Category',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
+            const SizedBox(
+              height: 20,
             ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: SizedBox(
-              height: 57,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: categories.map((meals) {
-                  return Container(
-                    child: Text(meals),
-                    margin: EdgeInsets.all(5),
-                    padding: EdgeInsets.all(15),
-                    //color: Colors.white,
+            const Text(
+              'Category',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(
+                  categories.length,
+                  (index) => Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 5),
+                    padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
                       color: Colors.pink,
                     ),
-                  );
+                    child: Text(categories[index]),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Text(
+              'Popular',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Expanded(
+              child: GridView.count(
+                crossAxisCount: 2,
+                childAspectRatio: 1.4 / 2,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
+                children: dummyMeals.map((cat) {
+                  return MealItem(cat);
                 }).toList(),
               ),
             ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            padding: EdgeInsets.fromLTRB(12, 0, 0, 8),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Popular',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Expanded(
-            child: GridView.count(
-              crossAxisCount: 2,
-              childAspectRatio: 1.4 / 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-              padding: EdgeInsets.all(20),
-              children: dummyMeals.map((cat) {
-                return MealItem(cat);
-              }).toList(),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
