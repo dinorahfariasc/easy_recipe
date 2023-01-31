@@ -5,6 +5,7 @@ class Meal {
   final String image;
   final List<String> ingredients;
   final List<String> steps;
+  final List<String> nutritions;
   final String duration;
   final bool isGlutenFree;
   final bool isLactoseFree;
@@ -25,5 +26,6 @@ class Meal {
     required this.isVegan,
     required this.isVegetarian,
     required this.label,
+    required this.nutritions,
   });
 }

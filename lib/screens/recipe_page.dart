@@ -1,8 +1,6 @@
 import 'package:easy_recipe/models/meal.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:easy_recipe/models/nutritions.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class RecipePage extends StatelessWidget {
   final Meal meal;
@@ -17,7 +15,7 @@ class RecipePage extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
+              children: const [
                 IconButton(
                   onPressed: null,
                   icon: Icon(Icons.arrow_back),
@@ -34,27 +32,28 @@ class RecipePage extends StatelessWidget {
               child: Image.asset(meal.image),
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               width: double.infinity,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     meal.title,
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                        fontSize: 25, fontWeight: FontWeight.bold),
                     textAlign: TextAlign.start,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text(
+                  const Text(
                     'descricao do prato',
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Row(
-                    children: [
+                    children: const [
                       Text(
                         'Nutritions',
                         style: TextStyle(
@@ -68,57 +67,8 @@ class RecipePage extends StatelessWidget {
                       )
                     ],
                   ),
+                  Nutritions(meal: meal),
                   // nutritions
-                  Column(
-                    children: [
-                      Row(
-                        children: [
-                          Container(
-                            width: 170,
-                            height: 60,
-                            decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(50),
-                            ),
-                            child: Row(
-                              //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.only(left: 15),
-                                  child: Text(
-                                    '250',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                ),
-                                Container(
-                                  padding: EdgeInsets.symmetric(horizontal: 20),
-                                  child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        'Calories',
-                                        style: TextStyle(
-                                          fontSize: 16,
-                                        ),
-                                      ),
-                                      Text(
-                                        'Kcal',
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    ],
-                  ),
                 ],
               ),
             ),
@@ -128,3 +78,5 @@ class RecipePage extends StatelessWidget {
     );
   }
 }
+
+// 

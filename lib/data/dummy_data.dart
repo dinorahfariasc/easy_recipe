@@ -90,6 +90,7 @@ const dummyMeals = [
       'The sauce will be done once the spaghetti are.',
       'Feel free to add some cheese on top of the finished dish.'
     ],
+    nutritions: ['250', '40', '20', '20'],
     isGlutenFree: false,
     isVegan: true,
     isVegetarian: true,
@@ -114,6 +115,7 @@ const dummyMeals = [
       'Layer ham, the pineapple and cheese on the white bread',
       'Bake the toast for round about 10 minutes in the oven at 200°C'
     ],
+    nutritions: ['250', '40', '20', '20'],
     isGlutenFree: false,
     isVegan: false,
     isVegetarian: false,
@@ -141,6 +143,7 @@ const dummyMeals = [
       'Bruch buns with ketchup',
       'Serve burger with tomato, cucumber and onion'
     ],
+    nutritions: ['400', '40', '40', '10'],
     isGlutenFree: false,
     isVegan: false,
     isVegetarian: false,
@@ -172,6 +175,7 @@ const dummyMeals = [
       'Remove, and drain on kitchen paper. Fry the parsley in the remaining oil and drain.',
       'Place the schnitzels on awarmed plate and serve garnishedwith parsley and slices of lemon.'
     ],
+    nutritions: ['200', '30', '15', '20'],
     isGlutenFree: false,
     isVegan: false,
     isVegetarian: false,
@@ -202,6 +206,7 @@ const dummyMeals = [
       'Prepare the salad',
       'Add salmon cubes and dressing'
     ],
+    nutritions: ['250', '40', '20', '20'],
     isGlutenFree: true,
     isVegan: false,
     isVegetarian: true,
@@ -233,6 +238,7 @@ const dummyMeals = [
       'Cool down again for at least 4 hours',
       'Serve with orange peel',
     ],
+    nutritions: ['250', '40', '20', '20'],
     isGlutenFree: true,
     isVegan: false,
     isVegetarian: true,
@@ -260,6 +266,7 @@ const dummyMeals = [
       'Heat a lightly oiled griddle or frying pan over medium high heat.',
       'Pour or scoop the batter onto the griddle, using approximately 1/4 cup for each pancake. Brown on both sides and serve hot.'
     ],
+    nutritions: ['250', '40', '20', '20'],
     isGlutenFree: true,
     isVegan: false,
     isVegetarian: true,
@@ -289,6 +296,7 @@ const dummyMeals = [
       'Add coconut milk',
       'Serve with rice'
     ],
+    nutritions: ['250', '40', '20', '20'],
     isGlutenFree: true,
     isVegan: false,
     isVegetarian: false,
@@ -334,6 +342,7 @@ const dummyMeals = [
       'Stop mixing after the egg white disappears. Divide mixture between 2 prepared ramekins. Place ramekins on prepared baking sheet.',
       'Bake in preheated oven until scuffles are puffed and have risen above the top of the rims, 12 to 15 minutes.',
     ],
+    nutritions: ['250', '40', '20', '20'],
     isGlutenFree: true,
     isVegan: false,
     isVegetarian: true,
@@ -362,6 +371,7 @@ const dummyMeals = [
       'Mix with asparagus, salad and dressing',
       'Serve with Baguette'
     ],
+    nutritions: ['250', '40', '20', '20'],
     isGlutenFree: true,
     isVegan: true,
     isVegetarian: true,
