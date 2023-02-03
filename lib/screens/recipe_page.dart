@@ -31,6 +31,13 @@ class RecipePage extends StatelessWidget {
               height: 300,
               child: Image.asset(meal.image),
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [Text('120 min'), Text('🌿'), Text('🚫')],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               width: double.infinity,
