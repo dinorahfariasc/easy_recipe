@@ -33,13 +33,13 @@ class MyApp extends StatelessWidget {
             ),
       ),
       home: const HomeScreen(),
-      /* initialRoute: '/',
-      routes: {
-        '/': (ctx) => const HomeScreen(),
-        AppRoutes.categories: (ctx) => const CategoriesScreen(),
-        AppRoutes.categoriesMeals: (ctx) => const CategoriesMealsScreen(),
-        AppRoutes.settings: (ctx) => const SettingsScreen(),
-      },*/
+      // initialRoute: '/',
+      // routes: {
+      //   AppRoutes.home: (ctx) => const HomeScreen(),
+      //   AppRoutes.categories: (ctx) => const CategoriesScreen(),
+      //   AppRoutes.categoriesMeals: (ctx) => const CategoriesMealsScreen(),
+      //   AppRoutes.settings: (ctx) => const SettingsScreen(),
+      // },
     );
   }
 }
@@ -55,11 +55,11 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   final screens = [const CategoriesScreen(), const CategoriesMealsScreen()];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      currentIndex = index;
-    });
-  }
+  // void _onItemTapped(int index) {
+  //   setState(() {
+  //     currentIndex = index;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +67,68 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text("Home"),
       ),
-      drawer: MainDrawer(),
+      drawer: const NavigationDrawer(),
       body: CategoriesScreen(),
     );
   }
 }
+
+class NavigationDrawer extends StatelessWidget {
+  const NavigationDrawer({super.key});
+
+  @override
+  Widget build(BuildContext context) => Drawer(
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              buildHeader(context),
+              buildMenu(context),
+            ],
+          ),
+        ),
+      );
+
+  Widget buildHeader(BuildContext context) => Container(
+        padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+      );
+
+  Widget buildMenu(BuildContext context) => Container(
+        padding: const EdgeInsets.all(24),
+        child: Wrap(
+          runSpacing: 12,
+          children: [
+            ListTile(
+              leading: const Icon(Icons.home_outlined),
+              title: const Text('Home'),
+              onTap: () =>
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (context) => const HomeScreen(),
+              )),
+            ),
+            ListTile(
+                leading: const Icon(Icons.favorite_outline),
+                title: const Text('Favourites'),
+                onTap: () {
+                  Navigator.pop(context);
+
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const SettingsScreen(),
+                  ));
+                }),
+            ListTile(
+                leading: const Icon(Icons.settings),
+                title: const Text('Settings'),
+                onTap: () {
+                  Navigator.pop(context);
+
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const SettingsScreen(),
+                  ));
+                }),
+          ],
+        ),
+      );
+}
+
+// MainDrawer()

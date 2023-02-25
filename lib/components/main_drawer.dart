@@ -23,53 +23,51 @@ class MainDrawer extends StatelessWidget {
           color: Colors.grey.shade600,
         ),
       ),
-      onTap: onTap(),
+      onLongPress: onTap(),
     );
   }
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        children: [
-          Container(
-            height: 80,
-            alignment: Alignment.center,
-            width: double.infinity,
-            color: Theme.of(context).colorScheme.primary,
-            child: const Text(
-              'easy recipe',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 28,
-                color: Colors.white,
-                fontFamily: 'RobotoCondensed',
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              height: 80,
+              alignment: Alignment.center,
+              width: double.infinity,
+              color: Theme.of(context).colorScheme.primary,
+              child: const Text(
+                'easy recipe',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 28,
+                  color: Colors.white,
+                  fontFamily: 'RobotoCondensed',
+                ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          _createItem(
-            Icons.restaurant_menu_rounded,
-            "Recipes",
-            () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomeScreen()));
-            },
-          ),
-          _createItem(
-            Icons.settings,
-            'Settings',
-            () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const SettingsScreen()));
-            },
-          )
-        ],
+            const SizedBox(
+              height: 20,
+            ),
+            _createItem(
+              Icons.restaurant_menu_rounded,
+              "Recipes",
+              () => Navigator.of(context).pushNamed(AppRoutes.home),
+            ),
+            _createItem(
+              Icons.settings,
+              'Settings',
+              () => Navigator.of(context).pushNamed(AppRoutes.settings),
+            )
+          ],
+        ),
       ),
     );
   }
 }
+
+
+
+           //   Navigator.of(context).pushReplacementNamed('/')
