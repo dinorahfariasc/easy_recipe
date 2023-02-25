@@ -1,8 +1,11 @@
 import 'package:easy_recipe/data/dummy_data.dart';
+import 'package:easy_recipe/screens/settings_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'screens/categories_screens.dart';
 import 'screens/categories_meals_screen.dart';
 import 'utils/app_routes.dart';
+import 'package:easy_recipe/components/main_drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,8 +20,8 @@ class MyApp extends StatelessWidget {
       title: 'Vamos Cozinhar?',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: Colors.pink,
-          secondary: Colors.amber,
+          primary: Color.fromARGB(255, 93, 161, 108),
+          secondary: Color.fromARGB(255, 196, 182, 141),
         ),
         canvasColor: Color.fromARGB(255, 231, 231, 231),
         fontFamily: 'Raleway',
@@ -30,11 +33,13 @@ class MyApp extends StatelessWidget {
             ),
       ),
       home: const HomeScreen(),
-      /* routes: {
-        AppRoutes.home: (context) => const homeScreen(),
+      /* initialRoute: '/',
+      routes: {
+        '/': (ctx) => const HomeScreen(),
         AppRoutes.categories: (ctx) => const CategoriesScreen(),
         AppRoutes.categoriesMeals: (ctx) => const CategoriesMealsScreen(),
-      }, */
+        AppRoutes.settings: (ctx) => const SettingsScreen(),
+      },*/
     );
   }
 }
@@ -62,6 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text("Home"),
       ),
+      drawer: MainDrawer(),
       body: CategoriesScreen(),
     );
   }

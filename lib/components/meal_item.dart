@@ -35,7 +35,7 @@ class MealItem extends StatelessWidget {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [
+                children: const [
                   IconButton(
                     onPressed: null,
                     icon: Icon(Icons.favorite_border),
@@ -43,27 +43,27 @@ class MealItem extends StatelessWidget {
                 ],
               ),
               Container(
-                padding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
                 child: Column(
                   children: [
-                    Image(
+                    const Image(
                       image: AssetImage('lib/assets/images/breakfeast.jpg'),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(meal.title),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(meal.duration),
-                        SizedBox(
+                        const SizedBox(
                           width: 8,
                         ),
-                        Text('4.5 ⭐'),
+                        const Text('4.5 ⭐'),
                       ],
                     )
                   ],

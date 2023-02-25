@@ -54,7 +54,7 @@ class CategoriesScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(15),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
-                      color: Colors.pink,
+                      color: const Color.fromARGB(255, 93, 161, 108),
                     ),
                     child: Text(categories[index]),
                   ),

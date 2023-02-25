@@ -14,7 +14,7 @@ class Ingredients extends StatelessWidget {
   final Meal meal;
 
   late String ingreList = meal.ingredients.join(' \n');
-  late String instrList = meal.steps.join('\n');
+  late String instrList = meal.steps.join('\n \n');
 
   @override
   Widget build(BuildContext context) {

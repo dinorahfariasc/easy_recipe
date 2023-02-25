@@ -11,6 +11,14 @@ class RecipePage extends StatelessWidget {
 
   const RecipePage({super.key, required this.meal});
 
+  launchUrl(String url) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not lanch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -19,12 +27,7 @@ class RecipePage extends StatelessWidget {
           onPressed: () async {
             const url =
                 'https://www.tiktok.com/@mxriyum/video/7146378667156081966?is_from_webapp=1&sender_device=pc&web_id=7155273817496421894';
-            if (await canLaunch(url)) {
-              await launch(url,
-                  forceSafariVC: true,
-                  forceWebView: true,
-                  enableJavaScript: true);
-            }
+            launch(url);
             // Add your onPressed code here!
           },
           backgroundColor: Colors.green,
