@@ -76,8 +76,8 @@ class CategoriesScreen extends StatelessWidget {
             ),
             Expanded(
               child: GridView.count(
-                crossAxisCount: 2,
-                childAspectRatio: 1.4 / 2,
+                crossAxisCount: 1,
+                childAspectRatio: 2 / 2,
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20,
                 children: dummyMeals.map((cat) {

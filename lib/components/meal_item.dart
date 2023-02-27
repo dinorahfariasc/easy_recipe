@@ -3,6 +3,7 @@ import 'package:easy_recipe/models/meal.dart';
 import 'package:flutter/material.dart';
 import '../models/meal.dart';
 import '../screens/recipe_page.dart';
+import '../components/labels.dart';
 
 class MealItem extends StatelessWidget {
   final Meal meal;
@@ -25,6 +26,7 @@ class MealItem extends StatelessWidget {
       }),
       child: SizedBox(
         height: 200,
+        // meal
         child: Container(
           decoration: BoxDecoration(
             color: Colors.white,
@@ -32,16 +34,8 @@ class MealItem extends StatelessWidget {
           ),
           padding: const EdgeInsets.symmetric(horizontal: 6),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: const [
-                  IconButton(
-                    onPressed: null,
-                    icon: Icon(Icons.favorite_border),
-                  ),
-                ],
-              ),
               Container(
                 padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
                 child: Column(
@@ -52,18 +46,28 @@ class MealItem extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    Text(meal.title),
+                    Text(
+                      meal.title,
+                      style: const TextStyle(
+                        fontSize: 20,
+                      ),
+                    ),
                     const SizedBox(
                       height: 10,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        const Icon(
+                          Icons.hourglass_bottom_rounded,
+                          size: 20,
+                        ),
                         Text(meal.duration),
                         const SizedBox(
                           width: 8,
                         ),
-                        const Text('4.5 ⭐'),
+                        Labels(meal)
+                        //Labels(),
                       ],
                     )
                   ],
