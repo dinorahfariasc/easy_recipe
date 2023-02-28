@@ -66,10 +66,18 @@ class MealItem extends StatelessWidget {
                         const SizedBox(
                           width: 8,
                         ),
-                        Labels(meal)
                         //Labels(),
                       ],
-                    )
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Label(meal),
+                      ],
+                    ),
                   ],
                 ),
               ),

@@ -85,6 +85,9 @@ class CategoriesScreen extends StatelessWidget {
                 }).toList(),
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
           ],
         ),
       ),
